@@ -3,6 +3,7 @@ from sc2 import run_game, maps, Race, Difficulty
 from sc2.player import Bot, Computer
 from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, \
  GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
+from .Resource import *
 
 
 # Protoss bot class
@@ -10,15 +11,13 @@ class ProtossBot(sc2.BotAI):
     def __init__(self):
         self.ITERATIONS_PER_MINUTE = 165
         self.MAX_WORKERS = 65
+        self.resource = Resource()
 
     # Execute at every step
     async def on_step(self, iteration):
         self.iteration = iteration
 
-        # Initially are 12 workers
-        await self.distribute_workers()
         # Resources
-        await self.build_workers()
         await self.build_pylons()
         await self.build_assimilators()
         await self.expand()
@@ -26,6 +25,8 @@ class ProtossBot(sc2.BotAI):
         await self.offensive_force_buildings()
         await self.build_offensive_force()
         await self.attack()
+
+        await self.resource.management(self)
 
     # Build workers (PROBE sc2.constants)
     async def build_workers(self):
@@ -141,10 +142,3 @@ class ProtossBot(sc2.BotAI):
                 if len(self.known_enemy_units) > 0:
                     for unit in self.units(UNIT).idle:
                         await self.do(unit.attack(random.choice(self.known_enemy_units)))
-
-
-# Run the game
-run_game(maps.get("AbyssalReefLE"), [
-    Bot(Race.Protoss, ProtossBot()),
-    Bot(Race.Protoss, CannonRushBot())
-], realtime=False)
