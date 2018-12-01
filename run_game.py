@@ -1,10 +1,9 @@
 from sc2.player import Bot, Computer
 from sc2 import run_game, maps, Race, Difficulty
-from .ProtossBot import ProtossBot
-from examples.protoss.cannon_rush import CannonRushBot
+from ProtossBot import ProtossBot
 
 # Run the game
 run_game(maps.get("AbyssalReefLE"), [
     Bot(Race.Protoss, ProtossBot()),
-    Bot(Race.Protoss, CannonRushBot())
+    Computer(Race.Protoss, Difficulty.Medium)
 ], realtime=False)

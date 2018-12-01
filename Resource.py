@@ -1,13 +1,13 @@
 from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR
-
+from ModuleAISC import ModuleAISC
 
 # Resource management
-class Resource:
+class Resource(ModuleAISC):
     def __init__(self):
         self.MAX_WORKERS = 65
         self.MAX_WORKERS_PER_NEXUS = 16
 
-    async def management(self, bot):
+    async def run(self, bot):
         # Initially are 12 workers
         await bot.distribute_workers()
 
