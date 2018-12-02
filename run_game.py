@@ -5,5 +5,5 @@ from ProtossBot import ProtossBot
 # Run the game
 run_game(maps.get("AbyssalReefLE"), [
     Bot(Race.Protoss, ProtossBot()),
-    Computer(Race.Protoss, Difficulty.Medium)
+    Computer(Race.Terran, Difficulty.Medium)
 ], realtime=False)

@@ -1,9 +1,12 @@
 import sc2
 
 from Resource import *
-from Building import *
+from StarterBuilding import *
+from MidBuilding import *
 from MilitaryPreparation import *
 from MilitaryTatics import *
+from Empty import *
+
 
 # Protoss bot class
 class ProtossBot(sc2.BotAI):
@@ -11,8 +14,8 @@ class ProtossBot(sc2.BotAI):
         self.ITERATIONS_PER_MINUTE = 165
         self.MAX_WORKERS = 65
         self.resource = Resource()
-        self.building = Building()
-        self.military = MilitaryPreparation()
+        self.building = StarterBuilding()
+        self.military = Empty()
         self.tatics = MilitaryTatics()
 
     # Execute at every step

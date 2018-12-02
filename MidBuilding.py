@@ -4,8 +4,8 @@ from ModuleAISC import ModuleAISC
 from Expansion import *
 
 
-# Building management
-class Building(ModuleAISC):
+# MidBuilding management
+class MidBuilding(ModuleAISC):
     def __init__(self):
         self.MAX_WORKERS = 65
         self.expansion = Expansion()
