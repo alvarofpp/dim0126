@@ -1,7 +1,7 @@
-from ModuleAbstract import ModuleAISC
+from model.ModuleModel import ModuleModel
 
 # War management
-class War(ModuleAISC):
+class War(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         

@@ -1,13 +1,13 @@
 from sc2.constants import NEXUS
-from ModuleAbstract import ModuleAISC
+from model.ModuleModel import ModuleModel
+
 
 # Expansion management
-class Expansion(ModuleAISC):
+class Expansion(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         
     async def run(self, bot):
-        
         await self.expand(bot)
 
     # Expand the empire

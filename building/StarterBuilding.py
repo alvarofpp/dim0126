@@ -3,8 +3,9 @@ from sc2.constants import NEXUS, PYLON, ASSIMILATOR, ZEALOT, MOTHERSHIPCORE
 from building.MidBuilding import *
 from military.MilitaryPreparation import *
 
+
 # StarterBuilding management
-class StarterBuilding(ModuleAISC):
+class StarterBuilding(ModuleModel):
     def __init__(self):
         self.pylon1 = False
         self.gateway1 = False

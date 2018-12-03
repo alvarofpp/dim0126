@@ -1,16 +1,15 @@
 import random
-from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, \
- GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
+from sc2.constants import STALKER, VOIDRAY
 
-from ModuleAbstract import ModuleAISC
+from model.ModuleModel import ModuleModel
+
 
 # MilitaryTatics management
-class MilitaryTatics(ModuleAISC):
+class MilitaryTatics(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         
     async def run(self, bot):
-        
         await self.attack(bot)
 
     # Find location of the enemy (army, structure, etc)
@@ -35,7 +34,8 @@ class MilitaryTatics(ModuleAISC):
 
         for UNIT in aggressive_units:
             # Attack the base
-            if bot.units(UNIT).amount > aggressive_units[UNIT][0] and bot.units(UNIT).amount > aggressive_units[UNIT][1]:
+            if bot.units(UNIT).amount > aggressive_units[UNIT][0] \
+                    and bot.units(UNIT).amount > aggressive_units[UNIT][1]:
                 for unit in bot.units(UNIT).idle:
                     await bot.do(unit.attack(self.find_target(bot)))
 

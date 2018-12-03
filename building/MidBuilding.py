@@ -1,10 +1,9 @@
 from sc2.constants import NEXUS, PYLON, ASSIMILATOR
-
 from building.Expansion import *
 
 
 # MidBuilding management
-class MidBuilding(ModuleAISC):
+class MidBuilding(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         self.expansion = Expansion()
@@ -12,7 +11,6 @@ class MidBuilding(ModuleAISC):
     async def run(self, bot):
         await self.build_pylons(bot)
         await self.build_assimilators(bot)
-
         await self.expansion.run(bot)
 
     # Build pylons (PYLON sc2.constants)

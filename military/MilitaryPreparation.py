@@ -1,17 +1,16 @@
-from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, \
- GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
+from sc2.constants import PYLON, GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
 
-from ModuleAbstract import ModuleAISC
+from model.ModuleModel import ModuleModel
+
 
 # MilitaryPreparation management
-class MilitaryPreparation(ModuleAISC):
+class MilitaryPreparation(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         
     async def run(self, bot):
         await self.offensive_force_buildings(bot)
         await self.build_offensive_force(bot)
-
 
 # Build offensive force buildings (GATEWAY, CYBERNETICSCORE, STARGATE sc2.constants)
     async def offensive_force_buildings(self, bot):

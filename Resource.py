@@ -1,8 +1,9 @@
-from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR
-from ModuleAbstract import ModuleAISC
+from sc2.constants import NEXUS, PROBE
+from model.ModuleModel import ModuleModel
+
 
 # Resource management
-class Resource(ModuleAISC):
+class Resource(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         self.MAX_WORKERS_PER_NEXUS = 16
