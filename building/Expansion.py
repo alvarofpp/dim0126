@@ -1,5 +1,5 @@
 from sc2.constants import NEXUS
-from ModuleAISC import ModuleAISC
+from ModuleAbstract import ModuleAISC
 
 # Expansion management
 class Expansion(ModuleAISC):

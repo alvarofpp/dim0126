@@ -1,7 +1,6 @@
-from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR
-from ModuleAISC import ModuleAISC
+from sc2.constants import NEXUS, PYLON, ASSIMILATOR
 
-from Expansion import *
+from building.Expansion import *
 
 
 # MidBuilding management

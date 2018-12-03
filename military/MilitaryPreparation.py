@@ -1,7 +1,7 @@
 from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, \
  GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
 
-from ModuleAISC import ModuleAISC
+from ModuleAbstract import ModuleAISC
 
 # MilitaryPreparation management
 class MilitaryPreparation(ModuleAISC):

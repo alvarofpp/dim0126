@@ -1,5 +1,5 @@
 from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR
-from ModuleAISC import ModuleAISC
+from ModuleAbstract import ModuleAISC
 
 # Resource management
 class Resource(ModuleAISC):

@@ -2,7 +2,7 @@ import random
 from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, \
  GATEWAY, CYBERNETICSCORE, STALKER, STARGATE, VOIDRAY
 
-from ModuleAISC import ModuleAISC
+from ModuleAbstract import ModuleAISC
 
 # MilitaryTatics management
 class MilitaryTatics(ModuleAISC):

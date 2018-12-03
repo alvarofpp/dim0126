@@ -1,4 +1,4 @@
-from ModuleAISC import ModuleAISC
+from ModuleAbstract import ModuleAISC
 
 # War management
 class War(ModuleAISC):

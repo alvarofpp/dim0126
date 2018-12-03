@@ -1,9 +1,7 @@
-from sc2.constants import NEXUS, PROBE, PYLON, ASSIMILATOR, ZEALOT, WARPGATE, MOTHERSHIPCORE, WARPGATERESEARCH
-from ModuleAISC import ModuleAISC
+from sc2.constants import NEXUS, PYLON, ASSIMILATOR, ZEALOT, MOTHERSHIPCORE
 
-from Expansion import *
-from MidBuilding import *
-from MilitaryPreparation import *
+from building.MidBuilding import *
+from military.MilitaryPreparation import *
 
 # StarterBuilding management
 class StarterBuilding(ModuleAISC):
