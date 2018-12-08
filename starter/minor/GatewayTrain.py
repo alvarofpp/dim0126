@@ -6,10 +6,10 @@ class GatewayTrain(ModuleModel):
         self.unit = None
         self.target = number
 
-    async def change_number(self, number):
+    def change_number(self, number):
         self.number = number
 
-    async def change_unit(self, unit):
+    def change_unit(self, unit):
         self.unit = unit
 
     async def run(self, bot):

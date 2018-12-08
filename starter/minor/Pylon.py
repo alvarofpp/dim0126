@@ -1,7 +1,7 @@
 from sc2.constants import NEXUS, PYLON
 from model.ModuleModel import *
 
-class Pilon(ModuleModel):
+class Pylon(ModuleModel):
     def __init__(self, number):
         self.ready = 0
         self.target = number

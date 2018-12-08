@@ -10,4 +10,4 @@ class Cybercore(ModuleModel):
         if self.ready < self.target and not bot.already_pending(CYBERNETICSCORE) and bot.units(GATEWAY).ready.exists:
             pylons = bot.units(PYLON).ready
             if pylons.exists and bot.can_afford(CYBERNETICSCORE): 
-                await bot.build(CYBERNETICSCORE, near=pylon)
+                await bot.build(CYBERNETICSCORE, near=pylons.random)
