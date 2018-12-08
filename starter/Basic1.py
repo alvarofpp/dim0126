@@ -1,9 +1,9 @@
-from sc2.constants import ZEALOT
+from sc2.constants import ZEALOT, ASSIMILATOR
 from model.ModuleModel import *
-from starter.Pilon import *
-from starter.Gateway import *
-from starter.GatewayTrain import *
-from starter.Assimilator import *
+from starter.minor.Pilon import *
+from starter.minor.Gateway import *
+from starter.minor.GatewayTrain import *
+from starter.minor.Assimilator import *
 
 
 class Basic1(ModuleModel):
@@ -21,6 +21,7 @@ class Basic1(ModuleModel):
         await self.train.run(bot)
         if bot.units(GATEWAY).ready.exists:
             await self.gas.run(bot)
-            self.ok = True
+            if bot.units(ASSIMILATOR).ready.exists:
+                self.ok = True
 
     
