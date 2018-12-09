@@ -1,4 +1,3 @@
-from sc2.constants import NEXUS, PROBE, ASSIMILATOR
 from model.ModuleModel import ModuleModel
 from model.operation.Probe import Probe
 from model.operation.Assimilator import Assimilator

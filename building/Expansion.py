@@ -1,17 +1,25 @@
 from sc2.constants import NEXUS
 from model.ModuleModel import ModuleModel
+from model.operation.Pylon import Pylon
 
 
-# Expansion management
 class Expansion(ModuleModel):
+    """Gerenciamento de expansão"""
+
     def __init__(self):
-        self.MAX_WORKERS = 65
+        super().__init__()
+        # Constantes
+        self.MAX_NEXUS = 3
+        self.BUILD_NEXUS = True
+        # Módulos
+        self.pylon = Pylon()
         
     async def run(self, bot):
+        """Executa os métodos indicados de forma assíncrona."""
+        await self.pylon.build(bot)
         await self.expand(bot)
 
-    # Expand the empire
     async def expand(self, bot):
-        # Max 3 nexus
-        if bot.units(NEXUS).amount < 3 and bot.can_afford(NEXUS):
+        """Expandir o império."""
+        if bot.units(NEXUS).amount < self.MAX_NEXUS and bot.can_afford(NEXUS):
             await bot.expand_now()

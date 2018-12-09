@@ -8,7 +8,7 @@ class Probe(OperationModel):
     def __init__(self):
         super().__init__()
         # Constantes
-        self.MAX_WORKERS = 65
+        self.MAX_WORKERS = 66
         self.MAX_WORKERS_PER_NEXUS = 16
 
     async def build(self, bot):
@@ -22,7 +22,6 @@ class Probe(OperationModel):
         if (units_nexus*self.MAX_WORKERS_PER_NEXUS) > units_probe and units_probe < self.MAX_WORKERS:
             # NEXUS construido e sem fila
             for nexus in bot.units(NEXUS).ready.noqueue:
-                print("TESTANDO", bot.can_afford(PROBE))
                 # Se pode proporcionar um PROBE
                 if bot.can_afford(PROBE):
                     # Treinar um PROBE
