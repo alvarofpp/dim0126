@@ -1,8 +1,10 @@
 from sc2.constants import NEXUS, PYLON
 from model.ModuleModel import *
 
+
 class Pylon(ModuleModel):
     def __init__(self, number):
+        super().__init__()
         self.ready = 0
         self.target = number
 

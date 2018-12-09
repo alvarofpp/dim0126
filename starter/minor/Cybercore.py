@@ -1,8 +1,10 @@
 from sc2.constants import PYLON, GATEWAY, CYBERNETICSCORE
 from model.ModuleModel import *
 
+
 class Cybercore(ModuleModel):
     def __init__(self, number):
+        super().__init__()
         self.ready = 0
         self.target = number
 

@@ -1,10 +1,13 @@
 from sc2.constants import GATEWAY
 from model.ModuleModel import *
 
+
 class GatewayTrain(ModuleModel):
     def __init__(self, number):
+        super().__init__()
         self.unit = None
         self.target = number
+        self.number = 0
 
     def change_number(self, number):
         self.number = number

@@ -1,8 +1,10 @@
 from sc2.constants import PYLON, GATEWAY
 from model.ModuleModel import *
 
+
 class Gateway(ModuleModel):
     def __init__(self, number):
+        super().__init__()
         self.ready = 0
         self.target = number
 
