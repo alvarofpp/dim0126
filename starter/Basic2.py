@@ -22,8 +22,8 @@ class Basic2(ModuleModel):
 
     async def run(self, bot):
         if bot.units(SENTRY).amount == 1:
-            train.change_unit(ADEPT)
-            train.change_number(10)
+            self.train.change_unit(ADEPT)
+            self.train.change_number(10)
         await self.nexus.run(bot)
         await self.cyber.run(bot)
         await self.train.run(bot)

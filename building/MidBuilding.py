@@ -16,7 +16,7 @@ class MidBuilding(ModuleModel):
     # Build pylons (PYLON sc2.constants)
     async def build_pylons(self, bot):
         # Supply capacity left provided by bases and pylon building
-        if bot.supply_left < 5 and not bot.already_pending(PYLON):
+        if bot.supply_left < 10 and not bot.already_pending(PYLON):
             # Get nexus
             nexuses = bot.units(NEXUS).ready
             # Check nexus exists
