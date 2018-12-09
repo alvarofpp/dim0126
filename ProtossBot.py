@@ -10,9 +10,11 @@ class ProtossBot(sc2.BotAI):
     def __init__(self):
         self.iteration = None
         self.ITERATIONS_PER_MINUTE = 165
-        self.module = Basic1()
+        # self.module = Basic1()
+        self.resource = Resource()
 
     # Execute at every step
     async def on_step(self, iteration):
         self.iteration = iteration
-        await self.module.run(self)
+        # await self.module.run(self)
+        await self.resource.run(self)

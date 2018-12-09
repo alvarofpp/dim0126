@@ -1,8 +1,12 @@
 from sc2.constants import NEXUS, ASSIMILATOR
 from model.ModuleModel import *
 
+
 class Assimilator(ModuleModel):
+    """Classe que definirá o comportamento de um Assimilator."""
+
     def __init__(self, number):
+        super().__init__()
         self.ready = 0
         self.target = number
 
