@@ -1,6 +1,6 @@
 from model.ModuleModel import ModuleModel
-from model.operation.Probe import Probe
-from model.operation.Assimilator import Assimilator
+from model.build.Probe import Probe
+from model.build.Assimilator import Assimilator
 
 
 class Resource(ModuleModel):

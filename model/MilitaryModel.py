@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 
-class ModuleModel(ABC):
-    """Classe abstrata de módulo geral"""
+class MilitaryModel(ABC):
+    """Classe abstrata de módulo de poder militar"""
 
     def __init__(self):
         super().__init__()
@@ -13,6 +13,9 @@ class ModuleModel(ABC):
         pass
 
     @abstractmethod
-    def run(self, bot):
-        """Ações que serão executadas"""
+    def build(self, bot):
+        pass
+
+    @abstractmethod
+    def train(self, bot):
         pass

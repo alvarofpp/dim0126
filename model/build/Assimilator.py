@@ -1,8 +1,8 @@
 from sc2.constants import NEXUS, ASSIMILATOR
-from model.OperationModel import *
+from model.BuildModel import *
 
 
-class Assimilator(OperationModel):
+class Assimilator(BuildModel):
     """Classe que definirá o comportamento dos Assimilators."""
 
     def __init__(self):

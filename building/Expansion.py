@@ -1,6 +1,6 @@
 from sc2.constants import NEXUS
 from model.ModuleModel import ModuleModel
-from model.operation.Pylon import Pylon
+from model.build.Pylon import Pylon
 
 
 class Expansion(ModuleModel):
