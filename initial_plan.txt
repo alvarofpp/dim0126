@@ -1,0 +1,39 @@
+Basic 1         
+ - Pilow
+ - Gateway
+  - Train: Zealot
+ - Gas
+
+Basic 2
+ - Nexus
+ - CyberCore
+  - Train: Adept, Sentry(1~2)
+  - Research: Attack, Glaive
+ - Pilow
+
+Mid 1
+ - Gateway
+  - Train: Stalker
+ - Pilow
+ - Gateway
+
+Mid 2
+ - Gas
+ - Stargate
+  - Train: Void Ray
+ - Nexus
+
+Mid 3
+ - Pilow (3x)
+ - Gas
+ - Stargate
+  - Train: Void Ray
+
+Late 1
+ - Robotics
+ - Bay
+  - Train: Colossus
+ - Nexus
+
+Late 2
+ - Recruit more
