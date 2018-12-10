@@ -10,6 +10,9 @@ class Pylon(BuildModel):
         # Constantes
         self.PYLON_PER_NEXUS = 5
 
+    async def condition(self, bot):
+        pass
+
     async def build(self, bot):
         """Construir Pylon (PYLON sc2.constants)."""
         # Supply capacity left provided by bases and pylon building

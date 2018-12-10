@@ -11,6 +11,9 @@ class Probe(BuildModel):
         self.MAX_WORKERS = 66
         self.MAX_WORKERS_PER_NEXUS = 16
 
+    async def condition(self, bot):
+        pass
+
     async def build(self, bot):
         """Treina trabalhadores (PROBE sc2.constants)."""
         # Quantidade de Nexus

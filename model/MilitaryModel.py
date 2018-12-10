@@ -14,8 +14,10 @@ class MilitaryModel(ABC):
 
     @abstractmethod
     def build(self, bot):
+        """Executar o proceso de consrução de algo"""
         pass
 
     @abstractmethod
     def train(self, bot):
+        """Treinar tropas militares"""
         pass

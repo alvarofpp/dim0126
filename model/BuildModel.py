@@ -14,4 +14,5 @@ class BuildModel(ABC):
 
     @abstractmethod
     def build(self, bot):
+        """Executar o proceso de consrução de algo"""
         pass

@@ -8,6 +8,9 @@ class CyberneticsCore(MilitaryModel):
     def __init__(self):
         super().__init__()
 
+    async def condition(self, bot):
+        pass
+
     async def build(self, bot):
         """Construir Cybernetics Core (CYBERNETICSCORE sc2.constants)."""
         if bot.units(PYLON).ready.exists:
@@ -18,5 +21,5 @@ class CyberneticsCore(MilitaryModel):
                     and bot.can_afford(CYBERNETICSCORE) and not bot.already_pending(CYBERNETICSCORE):
                     await bot.build(CYBERNETICSCORE, near=pylon)
 
-    async def train(self):
+    async def train(self, bot):
         pass

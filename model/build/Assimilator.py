@@ -8,6 +8,9 @@ class Assimilator(BuildModel):
     def __init__(self):
         super().__init__()
 
+    async def condition(self, bot):
+        pass
+
     async def build(self, bot):
         """Constroi assimiladores (ASSIMILATOR sc2.constants)"""
         # For each nexus ready
