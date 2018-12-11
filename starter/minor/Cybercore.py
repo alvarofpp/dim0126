@@ -8,6 +8,9 @@ class Cybercore(ModuleModel):
         self.ready = 0
         self.target = number
 
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         if self.ready < self.target and not bot.already_pending(CYBERNETICSCORE) and bot.units(GATEWAY).ready.exists:
             pylons = bot.units(PYLON).ready

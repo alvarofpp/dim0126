@@ -10,6 +10,9 @@ class Assimilator(ModuleModel):
         self.ready = 0
         self.target = number
 
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         if self.ready < self.target and not bot.already_pending(ASSIMILATOR):
             nexuses = bot.units(NEXUS).ready

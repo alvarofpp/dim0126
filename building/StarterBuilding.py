@@ -19,6 +19,9 @@ class StarterBuilding(ModuleModel):
         self.gateway3 = False
         self.gas2 = False
 
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         if self.gateway1 and not bot.already_pending(GATEWAY) and not self.cybercore:
             if bot.units(GATEWAY).ready.noqueue.exists:

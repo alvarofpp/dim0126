@@ -10,6 +10,9 @@ class TechSearch(ModuleModel):
         self.techs = []
         self.done = []
 
+    async def condition(self, bot):
+        pass
+        
     def add_tech(self, tech):
         if not tech in self.done:
             self.techs.append(tech)

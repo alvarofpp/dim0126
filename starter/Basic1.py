@@ -15,6 +15,9 @@ class Basic1(ModuleModel):
         
         self.train.change_unit(ZEALOT)
 
+    async def condition(self, bot):
+        pass
+
     async def run(self, bot):
         await self.pylon.run(bot)
         await self.gateway.run(bot)

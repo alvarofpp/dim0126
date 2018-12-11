@@ -20,6 +20,9 @@ class Basic2(ModuleModel):
         self.tech.add_tech(ADEPTSHIELDUPGRADE)
         self.train.change_unit(SENTRY)
 
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         if bot.units(SENTRY).amount == 1:
             self.train.change_unit(ADEPT)

@@ -8,6 +8,9 @@ class MilitaryPreparation(ModuleModel):
     def __init__(self):
         self.MAX_WORKERS = 65
         
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         await self.offensive_force_buildings(bot)
         await self.build_offensive_force(bot)
@@ -27,7 +30,7 @@ class MilitaryPreparation(ModuleModel):
                     await bot.build(GATEWAY, near=pylon)
             # Build a Stargate
             if bot.units(CYBERNETICSCORE).ready.exists:
-                if len(bot.units(STARGATE)) < ((bot.iteration / bot.ITERATIONS_PER_MINUTE)/2):
+                if len(bot.units(STARGATE)) < ((bot.iteration / bot.ITERATIONS_PER_MINUTE)):
                     if bot.can_afford(STARGATE) and not bot.already_pending(STARGATE):
                         await bot.build(STARGATE, near=pylon)
 

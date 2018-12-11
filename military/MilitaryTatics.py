@@ -12,6 +12,9 @@ class MilitaryTatics(ModuleModel):
     async def run(self, bot):
         await self.attack(bot)
 
+    async def condition(self, bot):
+        pass
+        
     # Find location of the enemy (army, structure, etc)
     def find_target(self, bot):
         # Army or common unit

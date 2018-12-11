@@ -1,4 +1,4 @@
-from sc2.constants import NEXUS, ASSIMILATOR
+from sc2.constants import NEXUS, ASSIMILATOR, GATEWAY
 from model.BuildModel import *
 
 
@@ -9,24 +9,25 @@ class Assimilator(BuildModel):
         super().__init__()
 
     async def condition(self, bot):
-        pass
+        return bot.units(GATEWAY).ready.exists
 
     async def build(self, bot):
         """Constroi assimiladores (ASSIMILATOR sc2.constants)"""
-        # For each nexus ready
-        for nexus in bot.units(NEXUS).ready:
-            # Geysers near the nexus
-            vaspenes = bot.state.vespene_geyser.closer_than(10.0, nexus)
-            for vaspene in vaspenes:
-                # If still can not build the assimilator
-                if not bot.can_afford(ASSIMILATOR):
-                    break
-                # Get workers
-                worker = bot.select_build_worker(vaspene.position)
-                # If there are no workers
-                if worker is None:
-                    break
-                # If there are no assimilators near the geysers
-                if not bot.units(ASSIMILATOR).closer_than(1.0, vaspene).exists:
-                    # Build assimilator
-                    await bot.do(worker.build(ASSIMILATOR, vaspene))
+        if await self.condition(bot):
+            # For each nexus ready
+            for nexus in bot.units(NEXUS).ready:
+                # Geysers near the nexus
+                vaspenes = bot.state.vespene_geyser.closer_than(10.0, nexus)
+                for vaspene in vaspenes:
+                    # If still can not build the assimilator
+                    if not bot.can_afford(ASSIMILATOR):
+                        break
+                    # Get workers
+                    worker = bot.select_build_worker(vaspene.position)
+                    # If there are no workers
+                    if worker is None:
+                        break
+                    # If there are no assimilators near the geysers
+                    if not bot.units(ASSIMILATOR).closer_than(1.0, vaspene).exists:
+                        # Build assimilator
+                        await bot.do(worker.build(ASSIMILATOR, vaspene))

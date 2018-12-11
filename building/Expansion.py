@@ -14,6 +14,9 @@ class Expansion(ModuleModel):
         # Módulos
         self.pylon = Pylon()
         
+    async def condition(self, bot):
+        pass
+        
     async def run(self, bot):
         """Executa os métodos indicados de forma assíncrona."""
         await self.pylon.build(bot)
