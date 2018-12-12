@@ -3,7 +3,7 @@ from model.MilitaryModel import *
 
 
 class CyberneticsCore(MilitaryModel):
-    """Classe que definirá as ações referentes aos Cybernetics Core."""
+    """Classe que definirá as ações referentes aos Cybernetics Core"""
 
     def __init__(self):
         super().__init__()
@@ -12,7 +12,7 @@ class CyberneticsCore(MilitaryModel):
         pass
 
     async def build(self, bot):
-        """Construir Cybernetics Core (CYBERNETICSCORE sc2.constants)."""
+        """Construir Cybernetics Core (CYBERNETICSCORE sc2.constants)"""
         if bot.units(PYLON).ready.exists:
             # Get a random pylon
             pylon = bot.units(PYLON).ready.random

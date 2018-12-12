@@ -3,7 +3,7 @@ from model.BuildModel import *
 
 
 class Pylon(BuildModel):
-    """Classe que definirá as ações referentes aos Pylons."""
+    """Classe que definirá as ações referentes aos Pylons"""
 
     def __init__(self):
         super().__init__()
@@ -14,7 +14,7 @@ class Pylon(BuildModel):
         pass
 
     async def build(self, bot):
-        """Construir Pylon (PYLON sc2.constants)."""
+        """Construir Pylon (PYLON sc2.constants)"""
         # Supply capacity left provided by bases and pylon building
         # print(bot.supply_left, bot.already_pending(PYLON))
         if bot.supply_left < 10 and not bot.already_pending(PYLON):

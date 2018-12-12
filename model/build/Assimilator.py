@@ -1,15 +1,15 @@
-from sc2.constants import NEXUS, ASSIMILATOR
+from sc2.constants import NEXUS, ASSIMILATOR, GATEWAY
 from model.BuildModel import *
 
 
 class Assimilator(BuildModel):
-    """Classe que definirá o comportamento dos Assimilators."""
+    """Classe que definirá o comportamento dos Assimilators"""
 
     def __init__(self):
         super().__init__()
 
     async def condition(self, bot):
-        pass
+        return bot.units(GATEWAY).ready.exists
 
     async def build(self, bot):
         """Constroi assimiladores (ASSIMILATOR sc2.constants)"""

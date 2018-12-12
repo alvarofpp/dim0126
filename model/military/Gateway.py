@@ -3,23 +3,23 @@ from model.MilitaryModel import *
 
 
 class Gateway(MilitaryModel):
-    """Classe que definirá as ações referentes aos Gateway."""
+    """Classe que definirá as ações referentes aos Gateway"""
 
     def __init__(self):
         super().__init__()
         # Constantes
-        self.GATEWAY_PER_MINUTES = 2
+        self.MINUTES_PER_GATEWAY = 2
 
     async def condition(self, bot):
         pass
 
     async def build(self, bot):
-        """Construir Gateway (GATEWAY sc2.constants)."""
+        """Construir Gateway (GATEWAY sc2.constants)"""
         if bot.units(PYLON).ready.exists:
             # Get a random pylon
             pylon = bot.units(PYLON).ready.random
             # Build a Gateway
-            if len(bot.units(GATEWAY)) < (bot.get_time_iteration()/self.GATEWAY_PER_MINUTES) \
+            if len(bot.units(GATEWAY)) < (bot.get_time_iteration()/self.MINUTES_PER_GATEWAY) \
                     and bot.can_afford(GATEWAY) and not bot.already_pending(GATEWAY):
                     await bot.build(GATEWAY, near=pylon)
 

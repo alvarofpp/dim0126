@@ -3,7 +3,7 @@ from model.BuildModel import *
 
 
 class Probe(BuildModel):
-    """Classe que definirá as ações referentes aos Probes."""
+    """Classe que definirá as ações referentes aos Probes"""
 
     def __init__(self):
         super().__init__()
@@ -15,7 +15,7 @@ class Probe(BuildModel):
         pass
 
     async def build(self, bot):
-        """Treina trabalhadores (PROBE sc2.constants)."""
+        """Treina trabalhadores (PROBE sc2.constants)"""
         # Quantidade de Nexus
         units_nexus = len(bot.units(NEXUS))
         # Quantidade de Probes

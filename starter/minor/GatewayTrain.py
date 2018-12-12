@@ -9,6 +9,9 @@ class GatewayTrain(ModuleModel):
         self.target = number
         self.number = 0
 
+    async def condition(self, bot):
+        pass  
+
     def change_number(self, number):
         self.number = number
 
