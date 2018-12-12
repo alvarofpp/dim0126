@@ -25,12 +25,12 @@ class MilitaryPreparation(ModuleModel):
                 if bot.can_afford(CYBERNETICSCORE) and not bot.already_pending(CYBERNETICSCORE):
                     await bot.build(CYBERNETICSCORE, near=pylon)
             # Build a Gateway
-            elif len(bot.units(GATEWAY)) < ((bot.iteration / bot.ITERATIONS_PER_MINUTE)/2):
+            elif len(bot.units(GATEWAY)) < (bot.get_time_iteration()/2):
                 if bot.can_afford(GATEWAY) and not bot.already_pending(GATEWAY):
                     await bot.build(GATEWAY, near=pylon)
             # Build a Stargate
             if bot.units(CYBERNETICSCORE).ready.exists:
-                if len(bot.units(STARGATE)) < ((bot.iteration / bot.ITERATIONS_PER_MINUTE)):
+                if len(bot.units(STARGATE)) < bot.get_time_iteration():
                     if bot.can_afford(STARGATE) and not bot.already_pending(STARGATE):
                         await bot.build(STARGATE, near=pylon)
 
