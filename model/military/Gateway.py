@@ -3,7 +3,7 @@ from model.MilitaryModel import *
 
 
 class Gateway(MilitaryModel):
-    """Classe que definirá as ações referentes aos Gateway."""
+    """Classe que definirá as ações referentes aos Gateway"""
 
     def __init__(self):
         super().__init__()
@@ -14,7 +14,7 @@ class Gateway(MilitaryModel):
         pass
 
     async def build(self, bot):
-        """Construir Gateway (GATEWAY sc2.constants)."""
+        """Construir Gateway (GATEWAY sc2.constants)"""
         if bot.units(PYLON).ready.exists:
             # Get a random pylon
             pylon = bot.units(PYLON).ready.random

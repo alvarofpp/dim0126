@@ -28,6 +28,6 @@ class Expansion(ModuleModel):
         await self.expand(bot, number_nexus)
 
     async def expand(self, bot, number):
-        """Expandir o império."""
+        """Expandir o império"""
         if bot.units(NEXUS).amount < number and bot.can_afford(NEXUS):
             await bot.expand_now()

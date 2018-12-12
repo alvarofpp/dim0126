@@ -4,7 +4,7 @@ from model.build.Assimilator import Assimilator
 
 
 class Resource(ModuleModel):
-    """Gerenciador de recursos."""
+    """Gerenciador de recursos"""
 
     def __init__(self):
         super().__init__()
@@ -16,7 +16,7 @@ class Resource(ModuleModel):
         pass
         
     async def run(self, bot):
-        """Executa os métodos indicados de forma assíncrona."""
+        """Executa os métodos indicados de forma assíncrona"""
         await bot.distribute_workers()
         await self.probe.build(bot)
         if self.assimilator.condition(bot):

@@ -3,7 +3,7 @@ from model.MilitaryModel import *
 
 
 class Stargate(MilitaryModel):
-    """Classe que definirá as ações referentes aos Stargate."""
+    """Classe que definirá as ações referentes aos Stargate"""
 
     def __init__(self):
         super().__init__()
@@ -14,7 +14,7 @@ class Stargate(MilitaryModel):
         pass
 
     async def build(self, bot):
-        """Construir Stargate (STARGATE sc2.constants)."""
+        """Construir Stargate (STARGATE sc2.constants)"""
         if bot.units(PYLON).ready.exists:
             # Get a random pylon
             pylon = bot.units(PYLON).ready.random

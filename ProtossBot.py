@@ -24,8 +24,8 @@ class ProtossBot(sc2.BotAI):
         self.iteration = iteration
         await self.resource.run(self)
         await self.expansion.run(self)
-        await self.military.run(self)
         await self.tatics.run(self)
+        await self.military.run(self)
         await self.buiding.run(self)
 
     def get_time_iteration(self):

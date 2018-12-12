@@ -3,7 +3,7 @@ from model.BuildModel import *
 
 
 class Assimilator(BuildModel):
-    """Classe que definirá o comportamento dos Assimilators."""
+    """Classe que definirá o comportamento dos Assimilators"""
 
     def __init__(self):
         super().__init__()
