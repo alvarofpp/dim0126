@@ -19,5 +19,5 @@ class Resource(ModuleModel):
         """Executa os métodos indicados de forma assíncrona"""
         await bot.distribute_workers()
         await self.probe.build(bot)
-        if self.assimilator.condition(bot):
+        if await self.assimilator.condition(bot):
             await self.assimilator.build(bot)

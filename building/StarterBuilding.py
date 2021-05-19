@@ -7,6 +7,7 @@ from military.MilitaryPreparation import *
 # StarterBuilding management
 class StarterBuilding(ModuleModel):
     def __init__(self):
+        super().__init__()
         self.pylon1 = False
         self.gateway1 = False
         self.gas1 = False

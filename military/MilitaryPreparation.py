@@ -6,6 +6,7 @@ from model.ModuleModel import ModuleModel
 # MilitaryPreparation management
 class MilitaryPreparation(ModuleModel):
     def __init__(self):
+        super().__init__()
         self.MAX_WORKERS = 65
         
     async def condition(self, bot):
@@ -37,13 +38,13 @@ class MilitaryPreparation(ModuleModel):
     # Build offensive army (STALKER, VOIDRAY sc2.constants)
     async def build_offensive_force(self, bot):
         # Gateway
-        for gateway in bot.units(GATEWAY).ready.noqueue:
+        for gateway in bot.units(GATEWAY).ready:
             # Train stalker
             if not bot.units(STALKER).amount > bot.units(VOIDRAY).amount:
                 if bot.can_afford(STALKER) and bot.supply_left > 0:
                     await bot.do(gateway.train(STALKER))
         # Stargate
-        for stargate in bot.units(STARGATE).ready.noqueue:
+        for stargate in bot.units(STARGATE).ready:
             # Train voidray
             if bot.can_afford(VOIDRAY) and bot.supply_left > 0:
                 await bot.do(stargate.train(VOIDRAY))
